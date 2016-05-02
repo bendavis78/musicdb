@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  get 'songs/show'
+
+  get 'alubms/show'
+
+  get 'artists/index'
+
+  get 'artists/show'
+
+  root 'home#index'
+  get 'artists' => 'artists#index'
   get 'song/show'
-
   get 'album/show'
-
   get 'artist/index'
-
-  get 'artist/show'
-
-  get 'home/index'
-
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
       get 'artists' => 'artists#index'

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AlbumControllerTest < ActionController::TestCase
+class SongsControllerTest < ActionController::TestCase
   test "should get show" do
     get :show
     assert_response :success
