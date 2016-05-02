@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  namespace :api do
-  namespace :v1 do
-    get 'artists/index'
-    end
-  end
-
-  namespace :api do
-  namespace :v1 do
-    get 'artists/show'
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      get 'artists' => 'artists#index'
+      get 'artists/:artist_id' => 'artists#show', :as => :artist
+      get 'artists/:artist_id/albums' => 'albums#index'
+      get 'artists/:artist_id/albums/:album_id' => 'albums#show', :as => :album
+      get 'artists/:artist_id/albums/:album_id/songs' => 'songs#index'
+      get 'artists/:artist_id/albums/:album_id/songs/:song_id' => 'songs#show', :as => :song
     end
   end
 

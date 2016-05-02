@@ -11,15 +11,14 @@ Artist.create!([
   {name: "MuteMath"}
 ])	
 
+Album.create!([
+	{artist_id: 1, title: "Let it Be", cover_image: "weirdface.jpg"},
+	{artist_id: 2, title: "Anomaly", cover_image: "computerface.jpg"},
+	{artist_id: 3, title: "Odd Soul", cover_image: "bluegreenface.jpg"}
+])
 
-#Album.create!([
-#	{artist_id: 1, title: "Let it Be", cover_image: "weirdface.jpg"},
-#	{artist_id: 2, title: "Anomaly", cover_image: "computerface.jpg"},
-#	{artist_id: 3, title: "Odd Soul", cover_image: "bluegreenface.jpg"}
-#])
-#
-#Song.create!([
-#	{album_id: 1, track: 6 , title:"Let it be"},
-#	{album_id: 2, track: 3 , title:"Say I Won't"},
-#	{album_id: 3, track: 4 , title:"Tell your heart heads up"}
-#])
+Song.create!([
+	{album_id: 1, track: 6 , title:"Let it be"},
+	{album_id: 2, track: 3 , title:"Say I Won't"},
+	{album_id: 3, track: 4 , title:"Tell your heart heads up"}
+])
