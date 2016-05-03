@@ -1,25 +1,18 @@
+def standard_urls
+  resources :artists, :only => [:index, :show] do
+    resources :albums, :only => [:index, :show] do
+      resources :songs, :only => [:index, :show]
+    end
+  end
+end
+
 Rails.application.routes.draw do
-  get 'songs/show'
-
-  get 'alubms/show'
-
-  get 'artists/index'
-
-  get 'artists/show'
-
   root 'home#index'
-  get 'artists' => 'artists#index'
-  get 'song/show'
-  get 'album/show'
-  get 'artist/index'
+  standard_urls
+  
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
-      get 'artists' => 'artists#index'
-      get 'artists/:artist_id' => 'artists#show', :as => :artist
-      get 'artists/:artist_id/albums' => 'albums#index'
-      get 'artists/:artist_id/albums/:album_id' => 'albums#show', :as => :album
-      get 'artists/:artist_id/albums/:album_id/songs' => 'songs#index'
-      get 'artists/:artist_id/albums/:album_id/songs/:song_id' => 'songs#show', :as => :song
+      standard_urls
     end
   end
 

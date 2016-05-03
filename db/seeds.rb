@@ -5,20 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Artist.destroy_all
 Artist.create!([
-  {name: "The Beatles"},
-  {name: "LaCrae"},
-  {name: "MuteMath"}
+  {id: 1, name: "The Beatles"},
+  {id: 2, name: "LaCrae"},
+  {id: 3, name: "MuteMath"}
 ])	
 
+Album.destroy_all
 Album.create!([
-	{artist_id: 1, title: "Let it Be", cover_image: "weirdface.jpg"},
-	{artist_id: 2, title: "Anomaly", cover_image: "computerface.jpg"},
-	{artist_id: 3, title: "Odd Soul", cover_image: "bluegreenface.jpg"}
+	{id: 1, artist_id: 1, title: "Let it Be", cover_image: "album1.png"},
+	{id: 2, artist_id: 2, title: "Anomaly", cover_image: "album2.jpg"},
+	{id: 3, artist_id: 3, title: "Odd Soul", cover_image: "album3.jpg"}
 ])
 
+Song.destroy_all
 Song.create!([
-	{album_id: 1, track: 6 , title:"Let it be"},
-	{album_id: 2, track: 3 , title:"Say I Won't"},
-	{album_id: 3, track: 4 , title:"Tell your heart heads up"}
+	{id: 1, album_id: 1, track: 6 , title:"Let it be"},
+	{id: 2, album_id: 2, track: 3 , title:"Say I Won't"},
+	{id: 3, album_id: 3, track: 4 , title:"Tell your heart heads up"}
 ])

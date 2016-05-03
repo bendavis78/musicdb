@@ -16,3 +16,13 @@
 @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
+
+.music-list {
+   display: flex;
+   flex-wrap: wrap;
+}
+.music-list .photo {
+  margin: 20px;
+  max-width: 300px;
+  height: auto;
+}
